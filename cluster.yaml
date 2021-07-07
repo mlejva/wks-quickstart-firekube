@@ -9,8 +9,11 @@ spec:
     pods:
       cidrBlocks: [192.168.0.0/16]
     serviceDomain: cluster.local
-  providerSpec:
-    value:
+  infrastructureRef:
+    apiVersion: cluster.weave.works/v1alpha3
+    kind: ExistingInfraCluster
+    name: example-gce-provider
+---
       apiVersion: baremetalproviderspec/v1alpha1
       kind: BareMetalClusterProviderSpec
       user: root
